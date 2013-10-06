@@ -18,7 +18,11 @@ angular.module('myApp', ['duParallax']).
 ```
 
 ```html
-<img src="img.png" du-parallax y="background">
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.min.js"></script>
+<script src="//raw.github.com/durated/angular-scroll/master/angular-scroll.min.js"></script>
+<script src="//raw.github.com/durated/angular-parallax/master/angular-parallax.min.js"></script>
+
+<img src="img.png" du-parallax y="background" alt="" />
 ```
 
 Building
