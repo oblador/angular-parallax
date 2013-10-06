@@ -13,6 +13,6 @@
   ],
   "dependencies": {
     "angular": "~1.2.0-rc.2",
-    "angular-scroll": "~0.1.0"
+    "angular-scroll": "git://github.com/durated/angular-scroll.git"
   }
 }

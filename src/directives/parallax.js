@@ -1,5 +1,5 @@
-angular.module('duParallax').
-directive('parallax',
+angular.module('duParallax.parallax', ['duScroll']).
+directive('duParallax',
   function(scrollPosition){
 
     var test = angular.element('<div></div>')[0];

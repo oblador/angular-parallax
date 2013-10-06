@@ -11,16 +11,14 @@ Usage
 
 ```js
 angular.module('myApp', ['duParallax']).
-    controller('myCtrl', function($scope, scrollPosition){
-        scrollPosition.listen(function(scrollY) {
-            console.log('Scrolled to ', scrollY);
-        });
-    }
+  controller('myCtrl', function($scope, parallaxHelper){
+    $scope.background = parallaxHelper.createAnimator(0.3);
+  }
 );
 ```
 
 ```html
-<img src="img.png" parallax y="background">
+<img src="img.png" du-parallax y="background">
 ```
 
 Building

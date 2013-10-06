@@ -1,8 +1,8 @@
 angular.module('duParallax', ['duScroll', 'duParallax.parallax', 'duParallax.parallaxHelper']);
 
 
-angular.module('duParallax').
-service('parallaxHelper',
+angular.module('duParallax.parallaxHelper', []).
+factory('parallaxHelper',
   function() {
     function createAnimator (factor, max, min, offset) {
       return function(params) {
@@ -18,8 +18,8 @@ service('parallaxHelper',
     };
 });
 
-angular.module('duParallax').
-directive('parallax',
+angular.module('duParallax.parallax', ['duScroll']).
+directive('duParallax',
   function(scrollPosition){
 
     var test = angular.element('<div></div>')[0];

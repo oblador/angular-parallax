@@ -1,5 +1,5 @@
-angular.module('duParallax').
-service('parallaxHelper',
+angular.module('duParallax.parallaxHelper', []).
+factory('parallaxHelper',
   function() {
     function createAnimator (factor, max, min, offset) {
       return function(params) {
