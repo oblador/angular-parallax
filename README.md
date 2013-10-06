@@ -47,3 +47,15 @@ Building
 
     $ npm install
     $ grunt
+
+Authors
+-------
+
+* @oblador
+* @fisshy
+
+License
+--------
+Copyright 2013 Durated Gmbh.
+
+Licensed under the [MIT License](http://opensource.org/licenses/MIT)
