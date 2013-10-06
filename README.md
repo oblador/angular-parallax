@@ -20,7 +20,7 @@ angular.module('myApp', ['duParallax']).
 ```html
 <section ng-controller="MyCtrl">
   <img src="img.png" du-parallax y="background" alt="" />
-</section
+</section>
 
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.min.js"></script>
 <script src="//raw.github.com/durated/angular-scroll/master/angular-scroll.min.js"></script>
