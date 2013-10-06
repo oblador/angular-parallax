@@ -19,6 +19,14 @@ Usage
 
 ### Quickstart
 
+Include module and dependencies.
+```html
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.min.js"></script>
+<script src="http://durated.github.io/angular-parallax/angular-scroll.min.js"></script>
+<script src="http://durated.github.io/angular-parallax/angular-parallax.min.js"></script>
+```
+
+Define transitions and expose to template.
 ```js
 angular.module('myApp', ['duParallax']).
   controller('MyCtrl', function($scope, parallaxHelper){
@@ -27,15 +35,32 @@ angular.module('myApp', ['duParallax']).
 );
 ```
 
+Apply parallax scrolling with the `du-parallax` attribute, define `y` position with the transition named `background`.
 ```html
 <section ng-controller="MyCtrl">
   <img src="img.png" du-parallax y="background" alt="" />
 </section>
-
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.min.js"></script>
-<script src="http://durated.github.io/angular-parallax/angular-scroll.min.js"></script>
-<script src="http://durated.github.io/angular-parallax/angular-parallax.min.js"></script>
 ```
+
+### `createAnimator`
+
+```js
+parallaxHelper.createAnimator(easingFactor, min, max, offset);
+```
+
+### Animatable attributes
+
+Attributes can be literals or a function called with a parameter object containing `scrollY`, `elemX`, `elemY`. The function should return the change in pixels relative to the objects current position if associated with y or x, otherwise the desired new value. 
+
+* y
+* x
+* rotation
+* opacity
+
+```html
+<img src="img.png" du-parallax y="accelleratedScroll" y="moveInFromLeft" opacity="fadeIn" rotation="'35deg'" alt="" />
+```
+
 
 Example
 -------
@@ -51,8 +76,8 @@ Building
 Authors
 -------
 
-* @oblador
-* @fisshy
+* [Joel Arvidsson](https://github.com/oblador)
+* [Joachim Karlsson](https://github.com/fisshy)
 
 License
 --------
