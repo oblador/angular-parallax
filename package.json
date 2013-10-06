@@ -1,0 +1,28 @@
+{
+  "name": "angular-parallax",
+  "version": "0.1.0",
+  "description": "Lightweight and performant parallax scrolling for angular.js",
+  "keywords": ["angular", "parallax", "parallax-scrolling"],
+  "main": "angular-parallax.min.js",
+  "repository": {
+    "type": "git",
+    "url": "git://git@github.com:durated/angular-parallax.git"
+  },
+  "bugs": {
+    "url": "https://github.com/durated/angular-parallax/issues"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Durated (http://durated.com)",
+  "contributors": ["Joel Arvidsson", "Joachim Karlsson"],
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-ngmin": "0.0.3",
+    "grunt-contrib-uglify": "~0.2.4",
+    "grunt-contrib-jshint": "~0.6.4",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-concat": "~0.3.0"
+  }
+}
