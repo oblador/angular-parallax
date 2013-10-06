@@ -17,12 +17,12 @@ directive('duParallax',
     }
 
     var translate3d = function(result){
-      return 'translate3d(' + result.x + 'px, ' + result.y + 'px, 0)';
+      return 'translate3d(' + Math.round(result.x) + 'px, ' + Math.round(result.y) + 'px, 0)';
     };
 
     var rotate = function(result) {
       if(!result.rotation) return '';
-      return ' rotate(' + result.rotation + (angular.isNumber(result.rotation) ? 'deg' : '') +  ')';
+      return ' rotate(' + (angular.isNumber(result.rotation) ? Math.round(result.rotation) + 'deg' : result.rotation) +  ')';
     };
 
     var applyProperties = function(result, element) {
