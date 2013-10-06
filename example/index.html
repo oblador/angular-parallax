@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <meta charset="UTF-8" />
+  <title>Angular Parallax Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style type="text/css">
+    p {
+      position: relative;
+      background: #fff;
+      z-index: 1;
+      padding: 100px 20px;
+    }
+    img {
+      position: relative;
+      z-index: 0;
+      margin: -10% 0;
+      max-width: 100%;
+    }
+    .wrap {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: #fff;
+    }
+  </style>
+</head>
+<body>
+<div class="wrap" ng-controller="MyCtrl">
+  <p>Bacon ipsum dolor sit amet sausage tail capicola ground round hamburger ham hock. Short ribs pig andouille meatball, pastrami tri-tip fatback ham hock shank kielbasa swine. Rump pancetta jerky kielbasa doner beef ribs tongue hamburger strip steak drumstick andouille shoulder shank flank. Swine drumstick meatball pig beef sausage strip steak.</p>
+
+  <img src="http://lorempixel.com/1000/800/" alt="" du-parallax y="background" />
+
+  <p>Bacon strip steak ground round, tongue pastrami short ribs pork chop venison turducken sausage sirloin. Flank chicken pork chop capicola turkey turducken cow pork loin biltong meatball drumstick pancetta filet mignon ground round fatback. Ham hock jerky short ribs brisket. Meatloaf shoulder pork chop capicola, sirloin swine pig pork. Jerky ribeye hamburger pork loin sirloin kevin bresaola boudin chuck flank. Ham hock pork belly chicken jerky rump bresaola.</p>
+
+  <img src="http://lorempixel.com/1000/801/" alt="" du-parallax y="background" />
+
+  <p>Shank fatback pastrami short loin, turkey jowl kielbasa ribeye chicken jerky drumstick flank ham. Swine shankle pork belly kielbasa shoulder flank jowl, sirloin doner. Kevin tri-tip bresaola leberkas. Swine ball tip cow strip steak. Ham filet mignon pork chop, pork fatback andouille pork loin shoulder jowl swine strip steak turducken prosciutto rump.</p>
+
+  <img src="http://lorempixel.com/1000/500/" alt="" du-parallax y="background" />
+
+  <p>Tongue tri-tip pastrami, shoulder rump pork belly ground round. Ham hock chuck leberkas doner, strip steak corned beef tri-tip capicola. Rump turkey ham sausage shankle. Flank shankle pork chop ham hock. Shankle venison kielbasa, pancetta swine beef ball tip t-bone bacon hamburger ground round ribeye flank. Turducken bacon bresaola, chicken kevin boudin ball tip strip steak filet mignon pork turkey shank ground round. Kielbasa fatback prosciutto pork chop, jerky ground round leberkas boudin ball tip beef shankle shoulder swine brisket.</p>
+
+  <img src="http://lorempixel.com/1000/600/" alt="" du-parallax y="background" />
+
+  <p>Shoulder cow tenderloin chuck, pork chop jerky doner leberkas. Chuck sausage hamburger, kevin beef pork chop pork shoulder ground round ball tip turducken flank. Bresaola tri-tip meatloaf, salami venison tail pig shank shankle jowl sausage brisket cow biltong turducken. Swine turducken hamburger ball tip short loin prosciutto kevin jowl tri-tip. Doner meatloaf pork brisket.</p>
+
+  <img src="http://lorempixel.com/1000/1000/" alt="" du-parallax y="background" />
+
+  <p>Does your lorem ipsum text long for something a little meatier? Give our generator a try… it’s tasty!</p>
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.min.js"></script>
+<script src="../bower_components/angular-scroll/angular-scroll.min.js" type="application/javascript"></script>
+<script src="..//angular-parallax.min.js" type="application/javascript"></script>
+<script>
+angular.module('myApp', ['duParallax']).
+  controller('MyCtrl', function($scope, parallaxHelper){
+    $scope.background = parallaxHelper.createAnimator(-0.3, 150, -150);
+  }
+);
+
+</script>
+</body>
+</html>
