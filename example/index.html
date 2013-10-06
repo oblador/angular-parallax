@@ -5,11 +5,18 @@
   <title>Angular Parallax Demo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style type="text/css">
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
     p {
       position: relative;
       background: #fff;
       z-index: 1;
       padding: 100px 20px;
+    }
+    h1 {
+      padding: 0 20px;
     }
     img {
       position: relative;
@@ -26,6 +33,7 @@
 </head>
 <body>
 <div class="wrap" ng-controller="MyCtrl">
+  <h1>Responsive Angular.js Parallax Example</h1>
   <p>Bacon ipsum dolor sit amet sausage tail capicola ground round hamburger ham hock. Short ribs pig andouille meatball, pastrami tri-tip fatback ham hock shank kielbasa swine. Rump pancetta jerky kielbasa doner beef ribs tongue hamburger strip steak drumstick andouille shoulder shank flank. Swine drumstick meatball pig beef sausage strip steak.</p>
 
   <img src="http://lorempixel.com/1000/800/" alt="" du-parallax y="background" />
@@ -43,22 +51,17 @@
   <img src="http://lorempixel.com/1000/600/" alt="" du-parallax y="background" />
 
   <p>Shoulder cow tenderloin chuck, pork chop jerky doner leberkas. Chuck sausage hamburger, kevin beef pork chop pork shoulder ground round ball tip turducken flank. Bresaola tri-tip meatloaf, salami venison tail pig shank shankle jowl sausage brisket cow biltong turducken. Swine turducken hamburger ball tip short loin prosciutto kevin jowl tri-tip. Doner meatloaf pork brisket.</p>
-
-  <img src="http://lorempixel.com/1000/1000/" alt="" du-parallax y="background" />
-
-  <p>Does your lorem ipsum text long for something a little meatier? Give our generator a try… it’s tasty!</p>
 </div>
 
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.min.js"></script>
-<script src="../bower_components/angular-scroll/angular-scroll.min.js" type="application/javascript"></script>
-<script src="..//angular-parallax.min.js" type="application/javascript"></script>
+<script src="http://durated.github.io/angular-parallax/angular-scroll.min.js"></script>
+<script src="http://durated.github.io/angular-parallax/angular-parallax.min.js"></script>
 <script>
 angular.module('myApp', ['duParallax']).
   controller('MyCtrl', function($scope, parallaxHelper){
     $scope.background = parallaxHelper.createAnimator(-0.3, 150, -150);
   }
 );
-
 </script>
 </body>
 </html>
