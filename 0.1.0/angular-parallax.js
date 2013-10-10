@@ -37,23 +37,17 @@ directive('duParallax',
     }
 
     var translate3d = function(result){
-      if(!result.x && !result.y) return '';
-      return 'translate3d(' + Math.round(result.x) + 'px, ' + Math.round(result.y) + 'px, 0)';
+      return 'translate3d(' + result.x + 'px, ' + result.y + 'px, 0)';
     };
 
     var rotate = function(result) {
       if(!result.rotation) return '';
-      return ' rotate(' + (angular.isNumber(result.rotation) ? Math.round(result.rotation) + 'deg' : result.rotation) +  ')';
+      return ' rotate(' + result.rotation + (angular.isNumber(result.rotation) ? 'deg' : '') +  ')';
     };
 
     var applyProperties = function(result, element) {
       element.style[transformProperty] = translate3d(result) + rotate(result);
       element.style.opacity = result.opacity;
-      if(result.custom) {
-        for(var property in result.custom) {
-          element.style[property] = result.custom[property];
-        }
-      }
     };
 
     return{
@@ -61,8 +55,7 @@ directive('duParallax',
         y : '=',
         x : '=',
         rotation : '=',
-        opacity : '=', 
-        custom : '='
+        opacity : '='
       },
       link: function($scope, $element, $attr){
         var element = $element[0];
@@ -75,7 +68,7 @@ directive('duParallax',
             elemY: rect.top
           };
 
-          var properties = { x : 0, y : 0, rotation : 0, opacity: 1, custom: undefined};
+          var properties = { x : 0, y : 0, rotation : 0, opacity: 1};
 
           for(var key in properties){
             if(angular.isFunction($scope[key])){
