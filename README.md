@@ -22,7 +22,7 @@ Usage
 Include module and dependencies.
 ```html
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.min.js"></script>
-<script src="http://durated.github.io/angular-parallax/angular-scroll.min.js"></script>
+<script src="http://durated.github.io/angular-scroll/0.2.0/angular-scroll.min.js"></script>
 <script src="http://durated.github.io/angular-parallax/angular-parallax.min.js"></script>
 ```
 
@@ -43,6 +43,7 @@ Apply parallax scrolling with the `du-parallax` attribute, define `y` position w
 ```
 
 ### `createAnimator`
+Convenience method for creating animator closures.
 
 ```js
 parallaxHelper.createAnimator(easingFactor, min, max, offset);
@@ -56,6 +57,16 @@ Attributes can be literals or a function called with a parameter object containi
 * x
 * rotation
 * opacity
+* custom
+
+The custom animator should return an object with camelCased CSS properties like this:
+
+```js
+{
+  backgroundPosition: '-100px 0',
+  left: '20%'
+}
+```
 
 ```html
 <img src="img.png" du-parallax y="accelleratedScroll" y="moveInFromLeft" opacity="fadeIn" rotation="'35deg'" alt="" />
