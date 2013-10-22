@@ -1,7 +1,7 @@
 angular-parallax
 ==============
 
-Lightweight and highly performant AngularJS directive for parallax scrolling. 1.4K, under 35K with gzipped with dependencies.
+Lightweight and highly performant AngularJS directive for parallax scrolling. Script is just 1.4K and about 35K gzipped with dependencies.
 
 Uses `requestAnimationFrame` and `translate3d` for GPU accelerated, smooth transitions.
 

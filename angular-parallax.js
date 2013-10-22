@@ -23,7 +23,7 @@ directive('duParallax',
   function(scrollPosition){
 
     var test = angular.element('<div></div>')[0];
-    var prefixes = 'transform WebkitTransform MozTransform OTransform msTransform'.split(' ');
+    var prefixes = 'transform WebkitTransform MozTransform OTransform'.split(' '); //msTransform
     var transformProperty;
     for(var i = 0; i < prefixes.length; i++) {
       if(test.style[prefixes[i]] !== undefined) {
