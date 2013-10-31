@@ -21,6 +21,10 @@ factory('parallaxHelper',
 angular.module('duParallax.parallax', ['duScroll']).
 directive('duParallax',
   function(scrollPosition){
+    //Never mind touch devices
+    if('ontouchstart' in window) {
+      return;
+    }
 
     var test = angular.element('<div></div>')[0];
     var prefixes = 'transform WebkitTransform MozTransform OTransform'.split(' '); //msTransform
@@ -32,6 +36,9 @@ directive('duParallax',
       }
     }
 
+    //Skipping browsers withouth transform-support. 
+    //Could do fallback to margin or absolute positioning, but would most likely perform badly
+    //so better UX would be to keep things static.
     if(!transformProperty){
       return;
     }
