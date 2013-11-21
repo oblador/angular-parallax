@@ -21,8 +21,8 @@ Usage
 
 Include module and dependencies.
 ```html
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.min.js"></script>
-<script src="http://durated.github.io/angular-scroll/0.2.0/angular-scroll.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
+<script src="http://durated.github.io/angular-scroll/0.2.1/angular-scroll.min.js"></script>
 <script src="http://durated.github.io/angular-parallax/angular-parallax.min.js"></script>
 ```
 
@@ -76,7 +76,7 @@ The custom animator should return an object with camelCased CSS properties like 
 Example
 -------
 
-Check out [example/index.html](https://github.com/durated/angular-parallax/blob/master/example/index.html).
+Check out [durated.github.io/angular-parallax](http://durated.github.io/angular-parallax/) or view the source at [example/index.html](https://github.com/durated/angular-parallax/blob/master/example/index.html).
 
 Building
 --------
