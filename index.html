@@ -1,93 +1,98 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+<html ng-app="myApp">
+<head>
+  <meta charset="UTF-8" />
+  <title>Angular Parallax Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style type="text/css">
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #ebebeb;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    p {
+      position: relative;
+      background: #ebebeb;
+      z-index: 1;
+      padding: 100px 20px;
+    }
+    h1 {
+      padding: 0 20px;
+      font-size: 30px;
+    }
+    img {
+      position: relative;
+      z-index: 0;
+      margin: -10% 0;
+      max-width: 100%;
+    }
+    a {
+      color: #00AC7F;
+      display: inline-block;
+      padding: 8px 15px;
+      background: #fff;
+      float: right;
+      text-decoration: none;
+      font-size: 20px;
+      border: 1px inset rgba(0,0,0, 0.2);
+    }
+    a:hover {
+      color: #fff;
+      background: #00AC7F;
+      border-style: outset;
+    }
+    .wrap {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: #ebebeb;
+    }
+  </style>
+</head>
+<body>
+<div class="wrap" ng-controller="MyCtrl">
+  <h1>Responsive Angular.js Parallax Example <a href="https://github.com/durated/angular-parallax">Github project</a></h1>
+  <p>Bacon ipsum dolor sit amet sausage tail capicola ground round hamburger ham hock. Short ribs pig andouille meatball, pastrami tri-tip fatback ham hock shank kielbasa swine. Rump pancetta jerky kielbasa doner beef ribs tongue hamburger strip steak drumstick andouille shoulder shank flank. Swine drumstick meatball pig beef sausage strip steak.</p>
 
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+  <img src="http://lorempixel.com/1000/800/" alt="" du-parallax y="background" />
 
-    <title>Angular-parallax by durated</title>
-  </head>
+  <p>Bacon strip steak ground round, tongue pastrami short ribs pork chop venison turducken sausage sirloin. Flank chicken pork chop capicola turkey turducken cow pork loin biltong meatball drumstick pancetta filet mignon ground round fatback. Ham hock jerky short ribs brisket. Meatloaf shoulder pork chop capicola, sirloin swine pig pork. Jerky ribeye hamburger pork loin sirloin kevin bresaola boudin chuck flank. Ham hock pork belly chicken jerky rump bresaola.</p>
 
-  <body>
-    <header>
-      <div class="inner">
-        <h1>Angular-parallax</h1>
-        <h2>Lightweight and performant parallax directive for angular.js.</h2>
-        <a href="https://github.com/durated/angular-parallax" class="button"><small>View project on</small>GitHub</a>
-      </div>
-    </header>
+  <img src="http://lorempixel.com/1000/801/" alt="" du-parallax y="background" />
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+  <p>Shank fatback pastrami short loin, turkey jowl kielbasa ribeye chicken jerky drumstick flank ham. Swine shankle pork belly kielbasa shoulder flank jowl, sirloin doner. Kevin tri-tip bresaola leberkas. Swine ball tip cow strip steak. Ham filet mignon pork chop, pork fatback andouille pork loin shoulder jowl swine strip steak turducken prosciutto rump.</p>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+  <img src="http://lorempixel.com/1000/500/" alt="" du-parallax y="background" />
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+  <p>Tongue tri-tip pastrami, shoulder rump pork belly ground round. Ham hock chuck leberkas doner, strip steak corned beef tri-tip capicola. Rump turkey ham sausage shankle. Flank shankle pork chop ham hock. Shankle venison kielbasa, pancetta swine beef ball tip t-bone bacon hamburger ground round ribeye flank. Turducken bacon bresaola, chicken kevin boudin ball tip strip steak filet mignon pork turkey shank ground round. Kielbasa fatback prosciutto pork chop, jerky ground round leberkas boudin ball tip beef shankle shoulder swine brisket.</p>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+  <img src="http://lorempixel.com/1000/600/" alt="" du-parallax y="background" />
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+  <p>Shoulder cow tenderloin chuck, pork chop jerky doner leberkas. Chuck sausage hamburger, kevin beef pork chop pork shoulder ground round ball tip turducken flank. Bresaola tri-tip meatloaf, salami venison tail pig shank shankle jowl sausage brisket cow biltong turducken. Swine turducken hamburger ball tip short loin prosciutto kevin jowl tri-tip. Doner meatloaf pork brisket.</p>
+</div>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
+<script src="http://durated.github.io/angular-scroll/0.2.0/angular-scroll.min.js"></script>
+<script src="http://durated.github.io/angular-parallax/0.1.2/angular-parallax.min.js"></script>
+<script>
+angular.module('myApp', ['duParallax']).
+  controller('MyCtrl', function($scope, parallaxHelper){
+    $scope.background = parallaxHelper.createAnimator(-0.3, 150, -150);
+  }
+);
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-        </section>
-
-        <aside id="sidebar">
-          <a href="https://github.com/durated/angular-parallax/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/durated/angular-parallax/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
-
-          <p class="repo-owner"><a href="https://github.com/durated/angular-parallax"></a> is maintained by <a href="https://github.com/durated">durated</a>.</p>
-
-          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
-      </div>
-    </div>
-
-            <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-38678157-2");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
-
-  </body>
+  ga('create', 'UA-38678157-2', 'durated.github.io');
+  ga('send', 'pageview');
+</script>
+</body>
 </html>
