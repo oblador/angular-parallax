@@ -8,15 +8,18 @@
     html, body {
       margin: 0;
       padding: 0;
+      background: #ebebeb;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     }
     p {
       position: relative;
-      background: #fff;
+      background: #ebebeb;
       z-index: 1;
       padding: 100px 20px;
     }
     h1 {
       padding: 0 20px;
+      font-size: 30px;
     }
     img {
       position: relative;
@@ -27,7 +30,6 @@
     .wrap {
       max-width: 1000px;
       margin: 0 auto;
-      background: #fff;
     }
   </style>
 </head>
@@ -53,9 +55,9 @@
   <p>Shoulder cow tenderloin chuck, pork chop jerky doner leberkas. Chuck sausage hamburger, kevin beef pork chop pork shoulder ground round ball tip turducken flank. Bresaola tri-tip meatloaf, salami venison tail pig shank shankle jowl sausage brisket cow biltong turducken. Swine turducken hamburger ball tip short loin prosciutto kevin jowl tri-tip. Doner meatloaf pork brisket.</p>
 </div>
 
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.min.js"></script>
-<script src="http://durated.github.io/angular-scroll/0.2.0/angular-scroll.min.js"></script>
-<script src="http://durated.github.io/angular-parallax/0.1.1/angular-parallax.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
+<script src="http://durated.github.io/angular-scroll/0.2.1/angular-scroll.min.js"></script>
+<script src="http://durated.github.io/angular-parallax/0.1.2/angular-parallax.min.js"></script>
 <script>
 angular.module('myApp', ['duParallax']).
   controller('MyCtrl', function($scope, parallaxHelper){
