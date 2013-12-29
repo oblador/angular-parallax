@@ -1,7 +1,7 @@
-angular.module('duParallax', ['duScroll', 'duParallax.parallax', 'duParallax.parallaxHelper']);
+angular.module('duParallax', ['duScroll', 'duParallax.directive', 'duParallax.helper']);
 
 
-angular.module('duParallax.parallaxHelper', []).
+angular.module('duParallax.helper', []).
 factory('parallaxHelper',
   function() {
     function createAnimator (factor, max, min, offset) {
@@ -18,7 +18,8 @@ factory('parallaxHelper',
     };
 });
 
-angular.module('duParallax.parallax', ['duScroll']).
+
+angular.module('duParallax.directive', ['duScroll']).
 directive('duParallax',
   function(scrollPosition){
     //Never mind touch devices
