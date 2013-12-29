@@ -1,4 +1,4 @@
-angular.module('duParallax.parallax', ['duScroll']).
+angular.module('duParallax.directive', ['duScroll']).
 directive('duParallax',
   function(scrollPosition){
     //Never mind touch devices

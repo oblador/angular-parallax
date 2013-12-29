@@ -1,1 +1,1 @@
-angular.module('duParallax', ['duScroll', 'duParallax.parallax', 'duParallax.parallaxHelper']);
+angular.module('duParallax', ['duScroll', 'duParallax.directive', 'duParallax.helper']);
