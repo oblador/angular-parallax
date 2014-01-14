@@ -1,7 +1,7 @@
 angular.module('duParallax.helper', []).
 factory('parallaxHelper',
   function() {
-    function createAnimator (factor, min, max, offset) {
+    function createAnimator (factor, max, min, offset) {
       return function(params) {
         var delta = factor*((offset || 0) + params.elemY);
         if(angular.isNumber(max) && delta > max) return max;
