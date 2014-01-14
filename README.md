@@ -46,7 +46,7 @@ Apply parallax scrolling with the `du-parallax` attribute, define `y` position w
 Convenience method for creating animator closures.
 
 ```js
-parallaxHelper.createAnimator(easingFactor, min, max, offset);
+parallaxHelper.createAnimator(easingFactor, max, min, offset);
 ```
 
 ### Animatable attributes

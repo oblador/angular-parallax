@@ -10,7 +10,8 @@
     "tests", 
     "package.json",
     "src", 
-    "example"
+    "example",
+    "Gruntfile.js"
   ],
   "dependencies": {
     "angular": "1.2.x",
