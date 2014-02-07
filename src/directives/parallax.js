@@ -1,6 +1,6 @@
 angular.module('duParallax.directive', ['duScroll']).
 directive('duParallax',
-  function(scrollPosition){
+  function($rootScope){
     //Never mind touch devices
     if('ontouchstart' in window) {
       return;
@@ -54,7 +54,7 @@ directive('duParallax',
       link: function($scope, $element, $attr){
         var element = $element[0];
         var currentProperties;
-        scrollPosition.observe(function(scrollY){
+        $rootScope.$on('$duScrollChanged', function($event, scrollY){
           var rect = element.getBoundingClientRect();
           var param = {
             scrollY : scrollY,
