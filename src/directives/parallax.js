@@ -1,6 +1,6 @@
 angular.module('duParallax.directive', ['duScroll']).
 directive('duParallax',
-  function($rootScope){
+  function($rootScope, scrollPosition){
     //Never mind touch devices
     if('ontouchstart' in window) {
       return;
