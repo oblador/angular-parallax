@@ -1,6 +1,6 @@
 {
   "name": "angular-parallax",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Lightweight and performant parallax scrolling for angular.js",
   "keywords": ["angular", "parallax", "parallax-scrolling"],
   "main": "angular-parallax.min.js",

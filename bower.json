@@ -1,6 +1,6 @@
 {
   "name": "ng-parallax",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "main": "angular-parallax.min.js",
   "ignore": [
     "**/.*",
