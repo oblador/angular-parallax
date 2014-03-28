@@ -113,8 +113,6 @@ directive('duParallax',
 
         $rootScope.$on('$duScrollChanged', onScroll);
 
-        //Init
-        onScroll({}, 0);
       }
     };
 });
