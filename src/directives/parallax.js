@@ -54,7 +54,8 @@ directive('duParallax',
       link: function($scope, $element, $attr){
         var element = $element[0];
         var currentProperties;
-        $rootScope.$on('$duScrollChanged', function($event, scrollY){
+
+        var onScroll = function($event, scrollY){
           var rect = element.getBoundingClientRect();
           var param = {
             scrollY : scrollY,
@@ -87,7 +88,12 @@ directive('duParallax',
             applyProperties(properties, element);
             currentProperties = properties;
           }
-        });
+        };
+
+        $rootScope.$on('$duScrollChanged', onScroll);
+
+        //Init
+        onScroll({}, 0);
       }
     };
 });
