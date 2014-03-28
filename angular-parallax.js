@@ -21,7 +21,7 @@ factory('parallaxHelper',
 
 angular.module('duParallax.directive', ['duScroll']).
 directive('duParallax',
-  function($rootScope, scrollPosition){
+  function($rootScope, scrollPosition, $window){
     //Never mind touch devices
     if('ontouchstart' in window) {
       return;
@@ -75,9 +75,28 @@ directive('duParallax',
       link: function($scope, $element, $attr){
         var element = $element[0];
         var currentProperties;
+        var inited = false;
 
         var onScroll = function($event, scrollY){
           var rect = element.getBoundingClientRect();
+          if(!inited) {
+            inited = true;
+            angular.element($window).on('load', function initParallax() {
+              //Trigger the onScroll until position stabilizes. Don't know why this is needed. 
+              //TODO: Think of more elegant solution.
+              var i = 0;
+              var maxIterations = 10;
+              var currentY = rect.top;
+              var lastY;
+              do {
+                lastY = currentY;
+                onScroll($event, scrollY);
+                currentY = element.getBoundingClientRect().top;
+                i++;
+              } while(i < maxIterations && lastY !== currentY);
+            });
+          }
+
           var param = {
             scrollY : scrollY,
             elemX: rect.left,
