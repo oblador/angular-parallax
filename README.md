@@ -21,8 +21,8 @@ Usage
 
 Include module and dependencies.
 ```html
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
-<script src="http://durated.github.io/angular-scroll/0.2.2/angular-scroll.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
+<script src="http://durated.github.io/angular-scroll/0.2.8/angular-scroll.min.js"></script>
 <script src="http://durated.github.io/angular-parallax/angular-parallax.min.js"></script>
 ```
 
