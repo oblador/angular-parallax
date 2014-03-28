@@ -1,6 +1,6 @@
 {
   "name": "ng-parallax",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "main": "angular-parallax.min.js",
   "ignore": [
     "**/.*",
@@ -15,6 +15,6 @@
   ],
   "dependencies": {
     "angular": "1.2.x",
-    "angular-scroll": "~0.2.2"
+    "angular-scroll": "~0.2.8"
   }
 }
