@@ -15,6 +15,6 @@
   ],
   "dependencies": {
     "angular": "1.2.x",
-    "angular-scroll": "~0.2.9"
+    "angular-scroll": ">=0.5.0"
   }
 }

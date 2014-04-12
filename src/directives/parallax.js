@@ -1,6 +1,6 @@
 angular.module('duParallax.directive', ['duScroll']).
 directive('duParallax',
-  function($rootScope, scrollPosition, $window){
+  function($rootScope, $window, $document){
     //Never mind touch devices
     if('ontouchstart' in window) {
       return;
@@ -56,7 +56,8 @@ directive('duParallax',
         var currentProperties;
         var inited = false;
 
-        var onScroll = function($event, scrollY){
+        var onScroll = function(){
+          var scrollY = $document.scrollTop();
           var rect = element.getBoundingClientRect();
           if(!inited) {
             inited = true;
@@ -69,7 +70,7 @@ directive('duParallax',
               var lastY;
               do {
                 lastY = currentY;
-                onScroll($event, scrollY);
+                onScroll();
                 currentY = element.getBoundingClientRect().top;
                 i++;
               } while(i < maxIterations && lastY !== currentY);
@@ -108,8 +109,7 @@ directive('duParallax',
             currentProperties = properties;
           }
         };
-
-        $rootScope.$on('$duScrollChanged', onScroll);
+        $document.on('scroll', onScroll);
 
       }
     };
