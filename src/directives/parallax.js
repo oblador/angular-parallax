@@ -109,8 +109,12 @@ directive('duParallax',
             currentProperties = properties;
           }
         };
-        $document.on('scroll', onScroll);
 
+        $document.on('scroll', onScroll).triggerHandler('scroll');
+        
+        $scope.$on('$destroy', function() {
+          $document.off('scroll', onScroll);
+        });
       }
     };
 });
