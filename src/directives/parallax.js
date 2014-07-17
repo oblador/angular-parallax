@@ -1,6 +1,7 @@
 angular.module('duParallax.directive', ['duScroll']).
 directive('duParallax',
   function($rootScope, $window, $document){
+
     var test = angular.element('<div></div>')[0];
     var prefixes = 'transform WebkitTransform MozTransform OTransform'.split(' '); //msTransform
     var transformProperty;
