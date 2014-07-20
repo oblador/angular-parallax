@@ -2,7 +2,7 @@ angular.module('duParallax', ['duScroll', 'duParallax.directive', 'duParallax.he
 
 
 angular.module('duParallax.helper', []).
-factory('parallaxHelper',
+factory('parallaxHelper', [
   function() {
     function createAnimator (factor, max, min, offset) {
       return function(params) {
@@ -16,11 +16,11 @@ factory('parallaxHelper',
       createAnimator: createAnimator,
       background:     createAnimator(-0.3, 150, -30, 50)
     };
-});
+}]);
 
 
 angular.module('duParallax.directive', ['duScroll']).
-directive('duParallax',
+directive('duParallax', [
   function($rootScope, $window, $document){
     var test = angular.element('<div></div>')[0];
     var prefixes = 'transform WebkitTransform MozTransform OTransform'.split(' '); //msTransform
@@ -133,4 +133,4 @@ directive('duParallax',
         });
       }
     };
-});
+}]);
