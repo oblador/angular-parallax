@@ -19,11 +19,12 @@
   "contributors": ["Joel Arvidsson", "Joachim Karlsson"],
   "license": "MIT",
   "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-ngmin": "0.0.3",
-    "grunt-contrib-uglify": "~0.2.4",
-    "grunt-contrib-jshint": "~0.6.4",
-    "grunt-contrib-clean": "~0.5.0",
-    "grunt-contrib-concat": "~0.3.0"
+    "gulp": "~3.8.0",
+    "gulp-concat": "~2.3.4",
+    "gulp-jshint": "~1.8.4",
+    "gulp-ng-annotate": "~0.3.0",
+    "gulp-rimraf": "~0.1.0",
+    "gulp-sourcemaps": "^1.1.1",
+    "gulp-uglify": "~0.3.1"
   }
 }

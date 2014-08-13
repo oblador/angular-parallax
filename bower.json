@@ -11,10 +11,10 @@
     "package.json",
     "src",
     "example",
-    "Gruntfile.js"
+    "gulpfile.js"
   ],
   "dependencies": {
-    "angular": "1.2.x",
-    "angular-scroll": ">=0.5.1"
+    "angular": "^1.2.x",
+    "angular-scroll": "^0.6.x"
   }
 }
