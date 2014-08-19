@@ -1,6 +1,6 @@
 angular.module('duParallax.directive', ['duScroll']).
 directive('duParallax',
-  function($rootScope, $window, $document){
+  function($rootScope, $window, $document, duParallaxTouchEvents){
 
     var test = angular.element('<div></div>')[0];
     var prefixes = 'transform WebkitTransform MozTransform OTransform'.split(' '); //msTransform
@@ -15,11 +15,11 @@ directive('duParallax',
     //Skipping browsers withouth transform-support.
     //Could do fallback to margin or absolute positioning, but would most likely perform badly
     //so better UX would be to keep things static.
-    if(!transformProperty){
+    if(!transformProperty || (!duParallaxTouchEvents && 'ontouchstart' in window)) {
       return;
     }
 
-    var translate3d = function(result){
+    var translate3d = function(result) {
       if(!result.x && !result.y) return '';
       return 'translate3d(' + Math.round(result.x) + 'px, ' + Math.round(result.y) + 'px, 0)';
     };

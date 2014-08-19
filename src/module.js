@@ -1,1 +1,1 @@
-angular.module('duParallax', ['duScroll', 'duParallax.directive', 'duParallax.helper']);
+angular.module('duParallax', ['duScroll', 'duParallax.directive', 'duParallax.helper']).value('duParallaxTouchEvents', true);
