@@ -59,17 +59,27 @@ Attributes can be literals or a function called with a parameter object containi
 * opacity
 * custom
 
+```html
+<img src="img.png" du-parallax y="accelleratedScroll" x="moveInFromLeft" opacity="fadeIn" rotation="'35deg'" alt="" />
+```
+
+### Custom animator
+
 The custom animator should return an object with camelCased CSS properties like this:
 
 ```js
-{
-  backgroundPosition: '-100px 0',
-  left: '20%'
+$scope.invertColors = function(elementPosition) {
+  var factor = -0.4;
+  var pos = Math.min(Math.max(elementPosition.elemY*factor, 0), 255);
+  var bg = 255-pos;
+  return {
+    backgroundColor: 'rgb(' + bg + ', ' + bg + ', ' + bg + ')',
+    color: 'rgb(' + pos + ', ' + pos + ', ' + pos + ')'
+  };
 }
 ```
-
 ```html
-<img src="img.png" du-parallax y="accelleratedScroll" y="moveInFromLeft" opacity="fadeIn" rotation="'35deg'" alt="" />
+<div du-parallax custom="invertColors">[loads of text…]</div>
 ```
 
 

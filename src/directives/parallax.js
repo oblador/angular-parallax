@@ -33,9 +33,7 @@ directive('duParallax',
       element.style[transformProperty] = translate3d(result) + rotate(result);
       element.style.opacity = result.opacity;
       if(result.custom) {
-        for(var property in result.custom) {
-          element.style[property] = result.custom[property];
-        }
+        angular.extend(element.style, result.custom);
       }
     };
 
