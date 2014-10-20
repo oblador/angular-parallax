@@ -12,7 +12,7 @@ Install
 
 Dependencies
 ------------
-[AngularJS](https://github.com/angular/angular.js) and [angular-scroll](https://github.com/durated/angular-scroll).
+[AngularJS](https://github.com/angular/angular.js) and [angular-scroll](https://github.com/oblador/angular-scroll).
 
 Usage
 -----
@@ -22,8 +22,8 @@ Usage
 Include module and dependencies.
 ```html
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
-<script src="http://durated.github.io/angular-scroll/0.5.1/angular-scroll.min.js"></script>
-<script src="http://durated.github.io/angular-parallax/angular-parallax.min.js"></script>
+<script src="//oblador.github.io/angular-scroll/0.6.2/angular-scroll.min.js"></script>
+<script src="//oblador.github.io/angular-parallax/angular-parallax.min.js"></script>
 ```
 
 Define transitions and expose to template.
@@ -86,7 +86,7 @@ $scope.invertColors = function(elementPosition) {
 Example
 -------
 
-Check out [durated.github.io/angular-parallax](http://durated.github.io/angular-parallax/) or view the source at [example/index.html](https://github.com/durated/angular-parallax/blob/master/example/index.html).
+Check out [oblador.github.io/angular-parallax](http://oblador.github.io/angular-parallax/) or view the source at [example/index.html](https://github.com/oblador/angular-parallax/blob/master/example/index.html).
 
 Building
 --------
@@ -94,14 +94,7 @@ Building
     $ npm install
     $ gulp
 
-Authors
--------
-
-* [Joel Arvidsson](https://github.com/oblador)
-* [Joachim Karlsson](https://github.com/fisshy)
-
 License
 --------
-Copyright 2013-2014 Durated Gmbh.
 
 Licensed under the [MIT License](http://opensource.org/licenses/MIT)
