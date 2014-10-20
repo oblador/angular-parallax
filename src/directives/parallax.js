@@ -87,6 +87,9 @@ directive('duParallax',
             }
           }
 
+          //Prevent negative scrolling
+          properties.y = (properties.y >= 0) ? properties.y : 0;
+
           //Detect changes, if no changes avoid reflow
           var hasChange = angular.isUndefined(currentProperties);
           if(!hasChange) {
