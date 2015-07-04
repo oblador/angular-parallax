@@ -1,6 +1,6 @@
 angular.module('duParallax.directive', ['duScroll']).
 directive('duParallax',
-  function($rootScope, $window, $document, duParallaxTouchEvents){
+  function($rootScope, $window, duParallaxTouchEvents, duParallaxElement){
 
     var test = angular.element('<div></div>')[0];
     var prefixes = 'transform WebkitTransform MozTransform OTransform'.split(' '); //msTransform
@@ -51,7 +51,7 @@ directive('duParallax',
         var inited = false;
 
         var onScroll = function(){
-          var scrollY = $document.scrollTop();
+          var scrollY = duParallaxElement.scrollTop();
           var rect = element.getBoundingClientRect();
           if(!inited) {
             inited = true;
@@ -104,10 +104,10 @@ directive('duParallax',
           }
         };
 
-        $document.on('scroll touchmove', onScroll).triggerHandler('scroll');
+        duParallaxElement.on('scroll touchmove', onScroll).triggerHandler('scroll');
 
         $scope.$on('$destroy', function() {
-          $document.off('scroll touchmove', onScroll);
+          duParallaxElement.off('scroll touchmove', onScroll);
         });
       }
     };
