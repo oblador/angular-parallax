@@ -1,6 +1,6 @@
-angular.module('duParallax.directive', ['duScroll']).
+angular.module('duParallax.directive', []).
 directive('duParallax',
-  function($rootScope, $window, $document, duParallaxTouchEvents){
+  function($rootScope, $window, duParallaxTouchEvents, duParallaxElement){
 
     var test = angular.element('<div></div>')[0];
     var prefixes = 'transform WebkitTransform MozTransform OTransform'.split(' '); //msTransform
@@ -51,7 +51,10 @@ directive('duParallax',
         var inited = false;
 
         var onScroll = function(){
-          var scrollY = $document.scrollTop();
+          var transYRegex = /\.*translateY\((.*)px\)/i;
+          var matches = transYRegex.exec(duParallaxElement.attr('style'));
+          var scrollY = (matches && matches.length > 0) ? parseFloat(matches[1]) : 0;
+
           var rect = element.getBoundingClientRect();
           if(!inited) {
             inited = true;
@@ -104,11 +107,22 @@ directive('duParallax',
           }
         };
 
-        $document.on('scroll touchmove', onScroll).triggerHandler('scroll');
+        var observer = new MutationObserver(function(mutations) {
+          for (var i = 0; i < mutations.length; i++) {
+            if (mutations[i].attributeName === 'style') {
+              onScroll();
+              break;
+            }
+          }
+        });
+
+        var config = { attributes: true };
+        observer.observe(duParallaxElement[0], config);
 
         $scope.$on('$destroy', function() {
-          $document.off('scroll touchmove', onScroll);
+          observer.disconnect();
         });
+
       }
     };
 });

@@ -1,4 +1,7 @@
-angular.module('duParallax', ['duScroll', 'duParallax.directive', 'duParallax.helper']);
+angular.module('duParallax', ['duParallax.directive', 'duParallax.helper']).value('duParallaxTouchEvents', true)
+	.factory('duParallaxElement', ["$document", function($document) {
+      return $document;
+    }]);
 
 
 angular.module('duParallax.helper', []).
@@ -19,9 +22,9 @@ factory('parallaxHelper',
 });
 
 
-angular.module('duParallax.directive', ['duScroll']).
+angular.module('duParallax.directive', []).
 directive('duParallax',
-  ["$rootScope", "$window", "$document", function($rootScope, $window, $document){
+  ["$rootScope", "$window", "duParallaxTouchEvents", "duParallaxElement", function($rootScope, $window, duParallaxTouchEvents, duParallaxElement){
 
     var test = angular.element('<div></div>')[0];
     var prefixes = 'transform WebkitTransform MozTransform OTransform'.split(' '); //msTransform
@@ -36,11 +39,11 @@ directive('duParallax',
     //Skipping browsers withouth transform-support.
     //Could do fallback to margin or absolute positioning, but would most likely perform badly
     //so better UX would be to keep things static.
-    if(!transformProperty){
+    if(!transformProperty || (!duParallaxTouchEvents && 'ontouchstart' in window)) {
       return;
     }
 
-    var translate3d = function(result){
+    var translate3d = function(result) {
       if(!result.x && !result.y) return '';
       return 'translate3d(' + Math.round(result.x) + 'px, ' + Math.round(result.y) + 'px, 0)';
     };
@@ -54,9 +57,7 @@ directive('duParallax',
       element.style[transformProperty] = translate3d(result) + rotate(result);
       element.style.opacity = result.opacity;
       if(result.custom) {
-        for(var property in result.custom) {
-          element.style[property] = result.custom[property];
-        }
+        angular.extend(element.style, result.custom);
       }
     };
 
@@ -74,7 +75,10 @@ directive('duParallax',
         var inited = false;
 
         var onScroll = function(){
-          var scrollY = $document.scrollTop();
+          var transYRegex = /\.*translateY\((.*)px\)/i;
+          var matches = transYRegex.exec(duParallaxElement.attr('style'));
+          var scrollY = (matches && matches.length > 0) ? parseFloat(matches[1]) : 0;
+
           var rect = element.getBoundingClientRect();
           if(!inited) {
             inited = true;
@@ -127,11 +131,22 @@ directive('duParallax',
           }
         };
 
-        $document.on('scroll touchmove', onScroll).triggerHandler('scroll');
+        var observer = new MutationObserver(function(mutations) {
+          for (var i = 0; i < mutations.length; i++) {
+            if (mutations[i].attributeName === 'style') {
+              onScroll();
+              break;
+            }
+          }
+        });
+
+        var config = { attributes: true };
+        observer.observe(duParallaxElement[0], config);
 
         $scope.$on('$destroy', function() {
-          $document.off('scroll touchmove', onScroll);
+          observer.disconnect();
         });
+
       }
     };
 }]);
