@@ -64,12 +64,15 @@ directive('duParallax',
         x : '=',
         rotation : '=',
         opacity : '=',
-        custom : '='
+        custom : '=',
+        scrollTarget: '@'
       },
       link: function($scope, $element, $attr){
         var element = $element[0];
         var currentProperties;
         var inited = false;
+
+        var scrollTarget = $scope.scrollTarget ? $($scope.scrollTarget) : $document;
 
         var onScroll = function(){
           var scrollY = $document.scrollTop();
@@ -125,10 +128,10 @@ directive('duParallax',
           }
         };
 
-        $document.on('scroll touchmove', onScroll).triggerHandler('scroll');
+        scrollTarget.on('scroll touchmove', onScroll).triggerHandler('scroll');
 
         $scope.$on('$destroy', function() {
-          $document.off('scroll touchmove', onScroll);
+          scrollTarget.off('scroll touchmove', onScroll);
         });
       }
     };
