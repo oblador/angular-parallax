@@ -59,8 +59,12 @@ Attributes can be literals or a function called with a parameter object containi
 * opacity
 * custom
 
+### Scroll target
+
+Defning a string attribute of "scroll-target" allows for targetting the element that will be scrolled. Any jQuery selector may be used. If a scroll-target is not provided, $document will be used.
+
 ```html
-<img src="img.png" du-parallax y="accelleratedScroll" x="moveInFromLeft" opacity="fadeIn" rotation="'35deg'" alt="" />
+<img src="img.png" du-parallax y="accelleratedScroll" x="moveInFromLeft" opacity="fadeIn" rotation="'35deg'" scroll-target="#myScrollingElement" alt="" />
 ```
 
 ### Custom animator
